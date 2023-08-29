@@ -46,80 +46,20 @@ pub fn rules() {
     println!("\n");
     pause();
     clear();
-    let cells: Vec<Miniboard> = vec![
-        Miniboard {
-            size: (3),
+    let mut cells = Vec::new();
+
+    for i in 1..=9 {
+        let miniboard = Miniboard {
+            size: 3,
             cells: vec![
                 vec!['╔', '═', '╗'],
-                vec!['║', '1', '║'],
+                vec!['║', std::char::from_digit(i, 10).unwrap(), '║'],
                 vec!['╚', '═', '╝'],
             ],
-        },
-        Miniboard {
-            size: (3),
-            cells: vec![
-                vec!['╔', '═', '╗'],
-                vec!['║', '2', '║'],
-                vec!['╚', '═', '╝'],
-            ],
-        },
-        Miniboard {
-            size: (3),
-            cells: vec![
-                vec!['╔', '═', '╗'],
-                vec!['║', '3', '║'],
-                vec!['╚', '═', '╝'],
-            ],
-        },
-        Miniboard {
-            size: (3),
-            cells: vec![
-                vec!['╔', '═', '╗'],
-                vec!['║', '4', '║'],
-                vec!['╚', '═', '╝'],
-            ],
-        },
-        Miniboard {
-            size: (3),
-            cells: vec![
-                vec!['╔', '═', '╗'],
-                vec!['║', '5', '║'],
-                vec!['╚', '═', '╝'],
-            ],
-        },
-        Miniboard {
-            size: (3),
-            cells: vec![
-                vec!['╔', '═', '╗'],
-                vec!['║', '6', '║'],
-                vec!['╚', '═', '╝'],
-            ],
-        },
-        Miniboard {
-            size: (3),
-            cells: vec![
-                vec!['╔', '═', '╗'],
-                vec!['║', '7', '║'],
-                vec!['╚', '═', '╝'],
-            ],
-        },
-        Miniboard {
-            size: (3),
-            cells: vec![
-                vec!['╔', '═', '╗'],
-                vec!['║', '8', '║'],
-                vec!['╚', '═', '╝'],
-            ],
-        },
-        Miniboard {
-            size: (3),
-            cells: vec![
-                vec!['╔', '═', '╗'],
-                vec!['║', '9', '║'],
-                vec!['╚', '═', '╝'],
-            ],
-        },
-    ];
+        };
+
+        cells.push(miniboard);
+    }
 
     let top_border = "╔═══════════════════════╗ ";
     let side_border = "║";
